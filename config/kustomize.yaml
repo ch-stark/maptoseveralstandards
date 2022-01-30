@@ -1,0 +1,3 @@
+generators:
+- ./policyGenerator_nist.yaml
+- ./policyGenerator_bsigrundschutz.yaml
