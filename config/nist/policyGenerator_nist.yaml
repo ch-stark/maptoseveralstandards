@@ -25,4 +25,4 @@ policies:
     - SI-5 Security Alerts, Advisories, and Directives
   disabled: false
   manifests:
-    - path: ../input_policy1/
+    - path: ../input/input_policy1/

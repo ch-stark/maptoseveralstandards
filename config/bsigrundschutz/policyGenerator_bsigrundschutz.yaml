@@ -25,4 +25,4 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input_policy1/
+    - path: ../input/input_policy1/
