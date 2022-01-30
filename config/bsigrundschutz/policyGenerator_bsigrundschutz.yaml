@@ -12,17 +12,17 @@ policyDefaults:
   namespace: policies
   # Use an existing placement rule 
   placement:
-    placementPath: placement-example.yaml
+    placementPath: ../placement-example.yaml
   remediationAction: enforce
   severity: medium
   standards:
-    - NIST SP 800-53
+    - BsiGrundschutz
 policies:
-- name: policy-test-nist-bsi
+- name: policy-example-bsi-grundschutzii
   categories:
-    - SI System and Information Integrity
+    - setup
   controls: 
-    - SI-5 Security Alerts, Advisories, and Directives
+    - setup
   disabled: false
   manifests:
-    - path: ../input/
+    - path: ../input_policy1/
