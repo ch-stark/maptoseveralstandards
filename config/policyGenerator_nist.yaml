@@ -1,0 +1,28 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-namespace-nist
+placementBindingDefaults:
+  name: binding-policy-default
+policyDefaults:
+  categories:
+    - CM Configuration Management
+  controls: 
+    - CM-2 Baseline Configuration
+  namespace: policies
+  # Use an existing placement rule 
+  placement:
+    placementPath: input/placement.yaml
+  remediationAction: enforce
+  severity: medium
+  standards:
+    - NIST SP 800-53
+policies:
+- name: policy-test-nist-bsi
+  categories:
+    - SI System and Information Integrity
+  controls: 
+    - SI-5 Security Alerts, Advisories, and Directives
+  disabled: false
+  manifests:
+    - path: input/
