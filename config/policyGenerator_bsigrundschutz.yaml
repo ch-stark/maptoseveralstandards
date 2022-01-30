@@ -3,7 +3,7 @@ kind: PolicyGenerator
 metadata:
   name: policy-namespace-nist
 placementBindingDefaults:
-  name: binding-policy-default
+  name: binding-example
 policyDefaults:
   categories:
     - CM Configuration Management
@@ -12,7 +12,7 @@ policyDefaults:
   namespace: policies
   # Use an existing placement rule 
   placement:
-    placementPath: input/placement.yaml
+    placementPath: placement-example.yaml
   remediationAction: enforce
   severity: medium
   standards:
