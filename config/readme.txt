@@ -24,3 +24,7 @@ EtcdEncryption is necessary for both standards.
 but for NIST you need to set Control  CM-2 Baseline Configuration
 while for BSI-Grundschutzt you need to set it under Control TBD
 
+
+
+Note: At we end we might also use PolicySets for better grouping
+
