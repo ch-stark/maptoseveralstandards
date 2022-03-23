@@ -2,7 +2,8 @@ This repository is organized the following way:
 
 - input: contains all Kubernestes resources we want to monitor and/or create using Policies
 
-using Policy-Generator we dynamically create Policies - based on the input - for different standard.
+using Policy-Generator and a PolicyGenerator-config-file we dynamically create Policies - based on the input - for different standards.
+
 
 We have the three fields:
 
