@@ -4,12 +4,22 @@ This repository is organized the following way:
 
 using Policy-Generator we dynamically create Policies - based on the input - for different standard.
 
+We have the three fields:
+
+  standards:
+    - NIST
+  categories:
+    - CM Configuration Management
+  controls: 
+    - CM-2 Baseline Configuration
+
+
 in this example we use NIST and BSI-Grundschutz
 
 Example:
 
 EtcdEncryption is necessary for both standards.
 
-but for NIST you need to set Control  A
-while for BSI-Grundschutzt you need to set it under Control X
+but for NIST you need to set Control  CM-2 Baseline Configuration
+while for BSI-Grundschutzt you need to set it under Control TBD
 
