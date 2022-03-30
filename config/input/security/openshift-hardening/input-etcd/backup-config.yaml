@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: backup-config
+  namespace: etcdbackup
+data:
+  OCP_BACKUP_SUBDIR: "/"
+  OCP_BACKUP_DIRNAME: "+etcd-backup-%FT%T%:z"
+  OCP_BACKUP_EXPIRE_TYPE: "days"
+  OCP_BACKUP_KEEP_DAYS: "30"
+  OCP_BACKUP_KEEP_COUNT: "10"
+  OCP_BACKUP_UMASK: "0027"
