@@ -1,0 +1,52 @@
+apiVersion: "logging.openshift.io/v1"
+kind: ClusterLogForwarder
+metadata:
+  name: instance 
+  namespace: openshift-logging 
+spec:
+  outputs:
+   - name: elasticsearch-secure 
+     type: "elasticsearch"
+     url: https://elasticsearch.secure.com:9200
+     secret:
+        name: elasticsearch
+   - name: elasticsearch-insecure 
+     type: "elasticsearch"
+     url: http://elasticsearch.insecure.com:9200
+   - name: kafka-app 
+     type: "kafka"
+     url: tls://kafka.secure.com:9093/{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}
+  inputs: 
+   - name: my-app-logs
+     application:
+        namespaces:
+        - my-project
+  pipelines:
+   - name: audit-logs 
+     inputRefs:
+      - audit
+     outputRefs:
+      - elasticsearch-secure
+      - default
+     parse: json 
+     labels:
+       secure: "true" 
+       datacenter: "east"
+   - name: infrastructure-logs 
+     inputRefs:
+      - infrastructure
+     outputRefs:
+      - elasticsearch-insecure
+     labels:
+       datacenter: "west"
+   - name: my-app 
+     inputRefs:
+      - my-app-logs
+     outputRefs:
+      - default
+   - inputRefs: 
+      - application
+     outputRefs:
+      - kafka-app
+     labels:
+       datacenter: "south"
