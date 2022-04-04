@@ -1,0 +1,18 @@
+### OpenShift Container Platform GitOps can be connected to the OpenShift [RBAC]. For this purpose, the SSO is carried out according to the documentation Configuring SSO for Argo CD using Dex.
+### The ArgoCD groups must be defined accordingly in the configuration as "policy" and kept in sync with the groups of the namespace administrators.
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: example-argocd
+  labels:
+    example: openshift-oauth
+spec:
+  dex:
+    openShiftOAuth: true 
+    groups:
+     - default
+  rbac:
+    defaultPolicy: 'role:readonly'
+    policy: |
+      g, cluster-admins, role:admin
+    scopes: '[groups]'
