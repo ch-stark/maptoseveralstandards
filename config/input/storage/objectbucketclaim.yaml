@@ -1,0 +1,10 @@
+apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
+metadata:
+  name: noobaa-registry
+  namespace: openshift-image-registry
+spec:
+  additionalConfig:
+    bucketclass: noobaa-default-bucket-class
+  generateBucketName: noobaa-registry
+  storageClassName: openshift-storage.noobaa.io
