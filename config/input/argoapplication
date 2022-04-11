@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: policiesapp
+  namespace: policies
+spec:
+  project: policiesproject
+  source:
+    repoURL: https://github.com/stolostron/policy-collection.git
+    targetRevision: branch
+    path: community
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: policies
+
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: policiesproject
+  namespace: policies
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Project to deploy policies
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - '*'
+  # Only permit applications to deploy to the policies namespace in the same cluster
+  destinations:
+  - namespace: policies
+    server: https://kubernetes.default.svc
+  # Deny all cluster-scoped resources from being created, except for Namespace
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Polices
+  - group: ''
+    kind: Placement
+  roles:
+  # A role which provides read-only access to all applications in the project
+  - name: policyadmin
+    groups:
+    - policyadmin
