@@ -6,9 +6,9 @@ metadata:
 spec:
   project: policiesproject
   source:
-    repoURL: https://github.com/stolostron/policy-collection.git
-    targetRevision: branch
-    path: community
+    repoURL: https://github.com/ch-stark/install-aap.git
+    targetRevision: main
+    path: generated-policies
   destination:
     server: https://kubernetes.default.svc
     namespace: policies
