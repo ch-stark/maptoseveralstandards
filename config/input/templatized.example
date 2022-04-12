@@ -1,0 +1,4 @@
+...
+spec:
+  enabled:  |
+    {{hub "(lookup "v1" "Secret" "default" "my-hub-secret").data.message | protect hub}}
