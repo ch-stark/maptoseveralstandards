@@ -3,15 +3,15 @@ apiVersion: addon.open-cluster-management.io/v1alpha1
 kind: ManagedClusterAddOn
 metadata:
   name: submariner
-  namespace: local-cluster
+  namespace: {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}
 spec:
   installNamespace: submariner-operator
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: local-cluster-aws-creds
-  namespace: local-cluster
+  name: {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}-aws-creds
+  namespace: {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}
 stringData:
   aws_access_key_id: ""
   aws_secret_access_key: ""
@@ -21,7 +21,7 @@ apiVersion: submarineraddon.open-cluster-management.io/v1alpha1
 kind: SubmarinerConfig
 metadata:
   name: submariner
-  namespace: local-cluster
+  namespace: {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}
 spec:
   gatewayConfig:
     gateways: 1
@@ -31,7 +31,7 @@ spec:
   NATTEnable: true
   cableDriver: libreswan
   credentialsSecret:
-    name: local-cluster-aws-creds
+    name: {{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}-aws-creds
 ---
 apiVersion: submariner.io/v1alpha1
 kind: Broker
