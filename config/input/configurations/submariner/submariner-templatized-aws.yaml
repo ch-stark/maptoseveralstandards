@@ -9,7 +9,7 @@ spec:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}'-aws-creds
+  name: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}-aws-creds'
   namespace: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}'
 stringData:
   aws_access_key_id: '{{ fromSecret "openshift-cloud-credential-operator" "cloud-credential-operator-iam-ro-creds" "AWS_ACCESS_KEY_ID" | base64dec }}'
@@ -30,7 +30,7 @@ spec:
   NATTEnable: true
   cableDriver: libreswan
   credentialsSecret:
-    name: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}'-aws-creds
+    name: '{{ fromSecret "open-cluster-management-agent" "hub-kubeconfig-secret" "cluster-name" | base64dec }}-aws-creds'
 ---
 apiVersion: submariner.io/v1alpha1
 kind: Broker
