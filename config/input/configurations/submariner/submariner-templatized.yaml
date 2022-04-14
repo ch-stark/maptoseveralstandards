@@ -15,7 +15,6 @@ metadata:
 stringData:
   aws_access_key_id: {{ fromSecret "openshift-cloud-credential-operator" "cloud-credential-operator-iam-ro-creds" "AWS_ACCESS_KEY_ID" | base64dec }}
   aws_secret_access_key: {{ fromSecret "openshift-cloud-credential-operator" "cloud-credential-operator-iam-ro-creds" "AWS_SECRET_ACCESS_KEY" | base64dec }}
-
 type: Opaque
 ---
 apiVersion: submarineraddon.open-cluster-management.io/v1alpha1
