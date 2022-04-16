@@ -1,0 +1,14 @@
+apiVersion: velero.io/v1
+kind: Backup
+metadata:
+  name: test-backup
+  labels:
+    velero.io/storage-location: default
+  namespace: openshift-adp
+spec:
+  hooks: {}
+  includedNamespaces:
+    - dpatest
+  includeClusterResources: false
+  storageLocation: default-dpa-1
+  ttl: 720h0m0s
