@@ -1,0 +1,24 @@
+apiVersion: velero.io/v1
+kind: BackupStorageLocation
+metadata:
+  name: playback-1
+   namespace: open-cluster-management-backup
+  labels:
+    app.kubernetes.io/component: bsl
+    app.kubernetes.io/instance: playback-1
+    app.kubernetes.io/managed-by: oadp-operator
+    app.kubernetes.io/name: oadp-operator-velero
+    openshift.io/oadp: 'True'
+    openshift.io/oadp-registry: 'True'
+spec:
+  config:
+    profile: default
+    region: us-east-1
+  credential:
+    key: cloud
+    name: cloud-credentials
+  default: true
+  objectStorage:
+    bucket: velero-backup-acm-vb
+    prefix: playback-25
+  provider: aws
