@@ -40,4 +40,4 @@ spec:
   # A role which provides read-only access to all applications in the project
   - name: policyadmin
     groups:
-    - policyadmin
+    - admins
