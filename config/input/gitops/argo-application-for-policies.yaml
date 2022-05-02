@@ -13,6 +13,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: policies
 
+---    
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
