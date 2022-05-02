@@ -1,0 +1,231 @@
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: BackupSchedule
+metadata:
+  creationTimestamp: '2022-05-02T09:11:27Z'
+  generation: 1
+  managedFields:
+    - apiVersion: cluster.open-cluster-management.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          .: {}
+          'f:veleroSchedule': {}
+          'f:veleroTtl': {}
+      manager: Mozilla
+      operation: Update
+      time: '2022-05-02T09:11:27Z'
+    - apiVersion: cluster.open-cluster-management.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          .: {}
+          'f:lastMessage': {}
+          'f:phase': {}
+          'f:veleroScheduleCredentials':
+            .: {}
+            'f:apiVersion': {}
+            'f:kind': {}
+            'f:metadata': {}
+            'f:spec':
+              .: {}
+              'f:schedule': {}
+              'f:template':
+                .: {}
+                'f:hooks': {}
+                'f:includeClusterResources': {}
+                'f:includedResources': {}
+                'f:labelSelector':
+                  .: {}
+                  'f:matchExpressions': {}
+                'f:metadata': {}
+                'f:ttl': {}
+            'f:status':
+              .: {}
+              'f:lastBackup': {}
+              'f:phase': {}
+          'f:veleroScheduleManagedClusters':
+            .: {}
+            'f:apiVersion': {}
+            'f:kind': {}
+            'f:metadata': {}
+            'f:spec':
+              .: {}
+              'f:schedule': {}
+              'f:template':
+                .: {}
+                'f:excludedNamespaces': {}
+                'f:hooks': {}
+                'f:includeClusterResources': {}
+                'f:includedResources': {}
+                'f:metadata': {}
+                'f:ttl': {}
+            'f:status':
+              .: {}
+              'f:lastBackup': {}
+              'f:phase': {}
+          'f:veleroScheduleResources':
+            .: {}
+            'f:apiVersion': {}
+            'f:kind': {}
+            'f:metadata': {}
+            'f:spec':
+              .: {}
+              'f:schedule': {}
+              'f:template':
+                .: {}
+                'f:excludedNamespaces': {}
+                'f:hooks': {}
+                'f:includeClusterResources': {}
+                'f:includedResources': {}
+                'f:labelSelector':
+                  .: {}
+                  'f:matchExpressions': {}
+                'f:metadata': {}
+                'f:ttl': {}
+            'f:status':
+              .: {}
+              'f:lastBackup': {}
+              'f:phase': {}
+      manager: manager
+      operation: Update
+      subresource: status
+      time: '2022-05-02T09:28:34Z'
+  name: acm
+  namespace: open-cluster-management-backup
+  resourceVersion: '258421'
+  uid: 23b6b485-b8e1-4cfe-9790-0dc1c0765e22
+spec:
+  veleroSchedule: 0 */3 * * *
+  veleroTtl: 120h
+status:
+  lastMessage: Velero schedules are enabled
+  phase: Enabled
+  veleroScheduleCredentials:
+    apiVersion: velero.io/v1
+    kind: Schedule
+    metadata: {}
+    spec:
+      schedule: 0 */3 * * *
+      template:
+        hooks: {}
+        includeClusterResources: false
+        includedResources:
+          - secret
+          - configmap
+        labelSelector:
+          matchExpressions:
+            - key: cluster.open-cluster-management.io/type
+              operator: Exists
+        metadata: {}
+        ttl: 120h0m0s
+    status:
+      lastBackup: '2022-05-02T09:28:34Z'
+      phase: Enabled
+  veleroScheduleManagedClusters:
+    apiVersion: velero.io/v1
+    kind: Schedule
+    metadata: {}
+    spec:
+      schedule: 0 */3 * * *
+      template:
+        excludedNamespaces:
+          - local-cluster
+          - openshift-machine-api
+        hooks: {}
+        includeClusterResources: true
+        includedResources:
+          - managedcluster.cluster.open-cluster-management.io
+          - clustersync.hiveinternal.openshift.io
+          - managedcluster.clusterview.open-cluster-management.io
+          - klusterletaddonconfig.agent.open-cluster-management.io
+          - managedclusteraddon.addon.open-cluster-management.io
+          - managedclusterset.cluster.open-cluster-management.io
+          - managedclusterset.clusterview.open-cluster-management.io
+          - managedclustersetbinding.cluster.open-cluster-management.io
+          - clusterpool.hive.openshift.io
+          - clusterclaim.hive.openshift.io
+          - clustercurator.cluster.open-cluster-management.io
+          - baremetalhost.metal3.io
+          - bmceventsubscription.metal3.io
+          - hostfirmwaresettings.metal3.io
+        metadata: {}
+        ttl: 120h0m0s
+    status:
+      lastBackup: '2022-05-02T09:28:34Z'
+      phase: Enabled
+  veleroScheduleResources:
+    apiVersion: velero.io/v1
+    kind: Schedule
+    metadata: {}
+    spec:
+      schedule: 0 */3 * * *
+      template:
+        excludedNamespaces:
+          - local-cluster
+          - open-cluster-management-backup
+          - open-cluster-management
+        hooks: {}
+        includeClusterResources: true
+        includedResources:
+          - clusterdeployment.hive.openshift.io
+          - machinepool.hive.openshift.io
+          - managedproxyconfiguration.proxy.open-cluster-management.io
+          - clusterstatus.proxy.open-cluster-management.io
+          - subscription.apps.open-cluster-management.io
+          - helmrelease.apps.open-cluster-management.io
+          - deployable.apps.open-cluster-management.io
+          - placementrule.apps.open-cluster-management.io
+          - channel.apps.open-cluster-management.io
+          - gitopscluster.apps.open-cluster-management.io
+          - subscriptionreport.apps.open-cluster-management.io
+          - subscriptionstatus.apps.open-cluster-management.io
+          - placement.cluster.open-cluster-management.io
+          - placementdecision.cluster.open-cluster-management.io
+          - hypershiftdeployment.cluster.open-cluster-management.io
+          - addonplacementscore.cluster.open-cluster-management.io
+          - userpreference.console.open-cluster-management.io
+          - discoveryconfig.discovery.open-cluster-management.io
+          - scale.hive.openshift.io
+          - selectorsyncidentityprovider.hive.openshift.io
+          - clusterrelocate.hive.openshift.io
+          - clusterprovision.hive.openshift.io
+          - dnszone.hive.openshift.io
+          - selectorsyncset.hive.openshift.io
+          - checkpoint.hive.openshift.io
+          - hiveconfig.hive.openshift.io
+          - syncidentityprovider.hive.openshift.io
+          - syncset.hive.openshift.io
+          - clusterdeprovision.hive.openshift.io
+          - machinepoolnamelease.hive.openshift.io
+          - clusterstate.hive.openshift.io
+          - clusterimageset.hive.openshift.io
+          - placementbinding.policy.open-cluster-management.io
+          - iampolicy.policy.open-cluster-management.io
+          - certificatepolicy.policy.open-cluster-management.io
+          - configurationpolicy.policy.open-cluster-management.io
+          - policy.policy.open-cluster-management.io
+          - policyset.policy.open-cluster-management.io
+          - policyautomation.policy.open-cluster-management.io
+          - observatorium.core.observatorium.io
+          - managedclusterimageregistry.imageregistry.open-cluster-management.io
+          - baremetalasset.inventory.open-cluster-management.io
+          - submarinerconfig.submarineraddon.open-cluster-management.io
+          - submarinerdiagnoseconfig.submarineraddon.open-cluster-management.io
+          - managedclusteraction.action.open-cluster-management.io
+          - agentserviceconfig.agent-install.openshift.io
+          - agent.agent-install.openshift.io
+          - nmstateconfig.agent-install.openshift.io
+          - infraenv.agent-install.openshift.io
+          - agentclassification.agent-install.openshift.io
+          - application.app.k8s.io
+          - multiclusterobservability.observability.open-cluster-management.io
+          - managedclusterview.view.open-cluster-management.io
+        labelSelector:
+          matchExpressions:
+            - key: policy.open-cluster-management.io/root-policy
+              operator: DoesNotExist
+        metadata: {}
+        ttl: 120h0m0s
+    status:
+      lastBackup: '2022-05-02T09:28:34Z'
+      phase: Enabled
