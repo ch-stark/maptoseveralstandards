@@ -41,4 +41,4 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input/gitops/argo-application-for-policies.yaml
+    - path: ../input/gitops
