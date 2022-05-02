@@ -33,13 +33,4 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input/operators/gitopsoperator.yaml 
-- name: policy-argoapp
-  categories:
-    - setup
-  controls: 
-    - setup
-  disabled: false
-  manifests:
-    - path: ../input/gitops/argo-application-for-policies.yaml     
-    
+    - path: ../input/operators/gitopsoperator.yaml
