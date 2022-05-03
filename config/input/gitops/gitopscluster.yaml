@@ -1,0 +1,15 @@
+---  
+apiVersion: apps.open-cluster-management.io/v1beta1
+kind: GitOpsCluster
+metadata:
+  name: policies
+  namespace: policies
+spec:
+  argoServer:
+    cluster: local-cluster
+    argoNamespace: policies
+  placementRef:
+    kind: Placement
+    apiVersion: cluster.open-cluster-management.io/v1beta1
+    name: placement-example
+    namespace: policies
