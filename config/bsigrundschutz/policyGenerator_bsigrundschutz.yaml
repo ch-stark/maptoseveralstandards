@@ -3,7 +3,7 @@ kind: PolicyGenerator
 metadata:
   name: policy-namespace-nist
 placementBindingDefaults:
-  name: binding-example
+  name: binding-bsi-grundschutz
 policyDefaults:
   categories:
     - CM Configuration Management
