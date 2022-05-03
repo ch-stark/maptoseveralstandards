@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ArgoCD
 metadata:
   name: argopolicies
-  namespace: policies
+  namespace: policies2
 spec:
   applicationSet:
     resources:
