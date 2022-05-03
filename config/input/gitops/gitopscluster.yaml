@@ -3,7 +3,7 @@ apiVersion: apps.open-cluster-management.io/v1beta1
 kind: GitOpsCluster
 metadata:
   name: policies
-  namespace: policies
+  namespace: policies2
 spec:
   argoServer:
     cluster: local-cluster
