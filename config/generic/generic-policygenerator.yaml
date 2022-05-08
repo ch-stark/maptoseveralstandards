@@ -17,16 +17,31 @@ policyDefaults:
   severity: medium
   standards:
     - Generic
-  
 policies:
-- name: kyverno-all
+- name: kyverno-generate
   categories:
     - setup
   controls: 
     - setup
   disabled: false
   manifests:
-    - path: ../input/kyverno
+    - path: ../input/kyverno/generate
+- name: kyverno-mutate
+  categories:
+    - setup
+  controls: 
+    - setup
+  disabled: false
+  manifests:
+    - path: ../input/kyverno/mutate
+- name: kyverno-validate
+  categories:
+    - setup
+  controls: 
+    - setup
+  disabled: false
+  manifests:
+    - path: ../input/kyverno/validate    
 - name: policy-submariner
   categories:
     - setup
@@ -35,7 +50,7 @@ policies:
   disabled: false
   manifests:
     - path: ../input/configurations/submariner/submariner-templatized-aws.yaml
-- name: policy-gitops
+- name: policy-gitopsoperator
   categories:
     - setup
   controls: 
