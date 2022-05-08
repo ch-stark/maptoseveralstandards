@@ -17,7 +17,16 @@ policyDefaults:
   severity: medium
   standards:
     - Generic
+  
 policies:
+- name: kyverno-all
+  categories:
+    - setup
+  controls: 
+    - setup
+  disabled: false
+  manifests:
+    - path: ../input/kyverno
 - name: policy-submariner
   categories:
     - setup
