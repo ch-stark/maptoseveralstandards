@@ -57,7 +57,7 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input/multiclusterhub/managed-serviceaccount.yaml
+    - path: ../input/mulitclusterhub/managed-serviceaccount.yaml
 - name: policy-multiClusterHub
   categories:
     - setup
@@ -65,5 +65,5 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input/multiclusterhub/MultiClusterHub.yaml
+    - path: ../input/mulitclusterhub/MultiClusterHub.yaml
   complianceType: "mustonlyhave"
