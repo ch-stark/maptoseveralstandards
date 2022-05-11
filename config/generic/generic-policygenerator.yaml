@@ -1,14 +1,14 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: policygenerator-generic
+  name: policy-generic
 placementBindingDefaults:
   name: binding-generic
 policyDefaults:
   categories:
-    - Generic
+    - CM Configuration Management
   controls: 
-    - Generic
+    - CM-2 Baseline Configuration
   namespace: policies
   # Use an existing placement rule 
   placement:
@@ -16,12 +16,13 @@ policyDefaults:
   remediationAction: enforce
   severity: medium
   standards:
-    - Generic
+    - generic
 policies:
-- name: policy-aap
+- name: policy-certmanagerfull
   categories:
     - setup
   controls: 
     - setup
   disabled: false
-  manifests: ../input/ansible/aap-operator.yaml
+  manifests:
+    - path: ../input/certmanager
