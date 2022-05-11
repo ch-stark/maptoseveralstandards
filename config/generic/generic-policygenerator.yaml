@@ -24,7 +24,8 @@ policies:
   controls: 
     - setup
   disabled: false
-  manifests: ../input/ansible/aap-operator.yaml
+  manifests:
+    - path: ../input/ansible/aap-operator.yaml
 - name: policy-automationhub
   categories:
     - setup
