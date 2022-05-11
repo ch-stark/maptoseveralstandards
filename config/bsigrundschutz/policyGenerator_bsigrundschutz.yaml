@@ -57,4 +57,4 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input/multiclusterhub
+    - path: ../input/mulitclusterhub/managed-serviceaccount.yaml
