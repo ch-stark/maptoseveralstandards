@@ -1,1 +1,60 @@
 
+---
+apiVersion: operator.open-cluster-management.io/v1
+kind: MultiClusterHub
+metadata:
+  name: multiclusterhub
+  namespace: open-cluster-management
+  finalizers:
+    - finalizer.operator.open-cluster-management.io
+spec:
+  overrides:
+    components:
+      - enabled: true
+        name: cluster-backup
+  separateCertificateManagement: false
+---
+apiVersion: oadp.openshift.io/v1alpha1
+kind: DataProtectionApplication
+metadata:
+  name: velero-sample
+  namespace: open-cluster-management-backup
+spec:
+  backupLocations:
+    - velero:
+        config:
+          profile: default
+          region: eu-central-1
+        credential:
+          key: cloud
+          name: cloud-credentials
+        default: true
+        objectStorage:
+          bucket: backuprestoreacm
+          prefix: velero
+        provider: aws
+  configuration:
+    restic:
+      enable: true
+    velero:
+      defaultPlugins:
+        - openshift
+        - aws
+        - kubevirt
+  snapshotLocations:
+    - velero:
+        config:
+          profile: default
+          region: eu-central-1
+        provider: aws
+---        
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Restore
+metadata:
+  name: restore-acm-passive-activate
+spec:
+  cleanupBeforeRestore: CleanupRestored
+  veleroManagedClustersBackupName: latest
+  veleroCredentialsBackupName: skip
+  veleroResourcesBackupName: skip
+  
