@@ -10,9 +10,6 @@ policyDefaults:
   controls: 
     - CM-2 Baseline Configuration
   namespace: kyverno
-  # Use an existing placement rule 
-  placement:
-    placementPath: ../placement-kyverno.yaml
   remediationAction: enforce
   severity: medium
   policySets:
