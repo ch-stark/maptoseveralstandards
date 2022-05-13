@@ -1,7 +1,7 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: policy-generic
+  name: policy-generic-restore
 placementBindingDefaults:
   name: binding-generic
 policyDefaults:
