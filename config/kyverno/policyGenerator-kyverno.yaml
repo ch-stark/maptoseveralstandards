@@ -16,6 +16,8 @@ policyDefaults:
     - kyverno-integration  
   standards:
     - generic
+  placementRulePath:  
+    - ../placementrule-default.yaml
 policies:
 - name: policy-disallow-deprecated-apis
   categories:
