@@ -35,7 +35,7 @@ policies:
   disabled: false
   manifests:
     - path: ../input/hub_backup_restore/dataprotectionresource.yaml  
-- name: policy-configure-backup-restore-passive
+- name: policy-configure-backup-restore
   categories:
     - setup
   controls: 
@@ -43,7 +43,7 @@ policies:
   disabled: false
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore.yaml
-- name: policy-configure-backup-restore
+- name: policy-configure-backup-restore-passive
   categories:
     - setup
   controls: 
