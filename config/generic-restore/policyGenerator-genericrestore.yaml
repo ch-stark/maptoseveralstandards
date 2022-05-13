@@ -43,7 +43,7 @@ policies:
   disabled: false
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore.yaml.yaml
-- name: policy-configure-backup-restore_passive
+- name: policy-configure-backup-restore
   categories:
     - setup
   controls: 
