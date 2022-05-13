@@ -1,18 +1,4 @@
 ---
-apiVersion: operator.open-cluster-management.io/v1
-kind: MultiClusterHub
-metadata:
-  name: multiclusterhub
-  namespace: open-cluster-management
-  finalizers:
-    - finalizer.operator.open-cluster-management.io
-spec:
-  overrides:
-    components:
-      - enabled: true
-        name: cluster-backup
-  separateCertificateManagement: false
----
 apiVersion: oadp.openshift.io/v1alpha1
 kind: DataProtectionApplication
 metadata:
