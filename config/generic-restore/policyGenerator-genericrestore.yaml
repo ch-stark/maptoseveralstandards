@@ -59,3 +59,11 @@ policies:
   disabled: true
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore_passive_sync.yaml
+- name: policy-configure-backup-restore_passive_activate
+  categories:
+    - setup
+  controls: 
+    - setup
+  disabled: true
+  manifests:
+    - path: ../input/hub_backup_restore/cluster_v1beta1_restore_passive_activate.yaml     
