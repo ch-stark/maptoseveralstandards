@@ -1,2 +1,6 @@
-generators:
-- policyGenerator_kyverno.yaml
+check-routes.yaml
+disallow-deprecated-apis.yaml
+disallow-jenkins-pipeline-strategy.yaml
+disallow-security-context-constraint-anyuid.yaml
+disallow-self-provisioner-binding.yaml
+enforce-etcd-encryption.yaml
