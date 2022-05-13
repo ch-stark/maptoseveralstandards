@@ -5,6 +5,7 @@ metadata:
     kubernetes.io/metadata.name: blueteam
   name: blueteam
 apiVersion: v1
+---
 kind: Namespace
 metadata:
   labels:
