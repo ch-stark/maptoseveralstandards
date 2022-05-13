@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ArgoCD
 metadata:
-  name: blueteam
-  namespace: blueteam
+  name: redteam
+  namespace: redteam
 spec:
   applicationSet:
     resources:
@@ -116,7 +116,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
-  namespace: blueteam
-  name: blue
+  namespace: redteam
+  name: redteam
 spec:
-  clusterSet: blue
+  clusterSet: redteam
