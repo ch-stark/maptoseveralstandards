@@ -27,7 +27,7 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input/kyverno/policy-install-kyverno.yaml
+    - path: ../input/kyverno/install-kyverno.yaml
 - name: policy-disallow-deprecated-apis
   categories:
     - setup
