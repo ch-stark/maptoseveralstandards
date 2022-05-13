@@ -59,7 +59,7 @@ policies:
   manifests:
     - path: ../input/mulitclusterhub/MultiClusterHub.yaml
   complianceType: "mustonlyhave"
-- name: policy-configure-backup-restore
+- name: policy-configure-backup-restore-restore
   categories:
     - setup
   controls: 
