@@ -15,8 +15,6 @@ policyDefaults:
     placementPath: ../placement-example.yaml
   remediationAction: enforce
   severity: medium
-  policySets:
-    - backuprestoretest
   standards:
     - generic
 policies:
