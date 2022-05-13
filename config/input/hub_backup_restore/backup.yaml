@@ -1,38 +1,4 @@
 ---
-apiVersion: oadp.openshift.io/v1alpha1
-kind: DataProtectionApplication
-metadata:
-  name: velero-sample
-  namespace: open-cluster-management-backup
-spec:
-  backupLocations:
-    - velero:
-        config:
-          profile: default
-          region: eu-central-1
-        credential:
-          key: cloud
-          name: cloud-credentials
-        default: true
-        objectStorage:
-          bucket: backuprestoreacm
-          prefix: velero
-        provider: aws
-  configuration:
-    restic:
-      enable: true
-    velero:
-      defaultPlugins:
-        - openshift
-        - aws
-        - kubevirt
-  snapshotLocations:
-    - velero:
-        config:
-          profile: default
-          region: eu-central-1
-        provider: aws
----
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: BackupSchedule
 metadata:
