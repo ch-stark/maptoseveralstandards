@@ -32,14 +32,4 @@ spec:
           profile: default
           region: eu-central-1
         provider: aws
----        
-apiVersion: cluster.open-cluster-management.io/v1beta1
-kind: Restore
-metadata:
-  name: restore-acm-passive-activate
-spec:
-  cleanupBeforeRestore: CleanupRestored
-  veleroManagedClustersBackupName: latest
-  veleroCredentialsBackupName: skip
-  veleroResourcesBackupName: skip
   
