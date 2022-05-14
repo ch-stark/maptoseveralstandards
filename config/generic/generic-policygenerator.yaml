@@ -11,8 +11,7 @@ policyDefaults:
     - CM-2 Baseline Configuration
   namespace: policies
   # Use an existing placement rule 
-  placement:
-    placementrulePath: ../placementrule-default.yaml
+  placementrulePath: ../placementrule-default.yaml
   remediationAction: inform
   severity: medium
   standards:
