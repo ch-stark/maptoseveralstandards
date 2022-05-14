@@ -13,7 +13,7 @@ policyDefaults:
   # Use an existing placement rule 
   placement:
     placementPath: ../placement-example.yaml
-  remediationAction: enforce
+  remediationAction: inform
   severity: medium
   standards:
     - generic
