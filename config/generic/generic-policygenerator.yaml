@@ -10,7 +10,7 @@ policyDefaults:
   controls: 
     - CM-2 Baseline Configuration
   namespace: policies
-  remediationAction: enforce
+  remediationAction: inform
   severity: medium
   standards:
     - generic 
