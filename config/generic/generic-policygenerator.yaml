@@ -10,13 +10,10 @@ policyDefaults:
   controls: 
     - CM-2 Baseline Configuration
   namespace: policies
-  # Use an existing placement rule 
-  remediationAction: inform
+  remediationAction: enforce
   severity: medium
   standards:
-    - generic
-  placement:
-    placementRulePath: ../placement-example.yaml  
+    - generic 
 policies:
 - name: policy-aap
   categories:
