@@ -14,6 +14,8 @@ policyDefaults:
   severity: medium
   standards:
     - generic 
+  placement:
+    placementRulePath: ../placementrule-default.yaml    
 policies:
 - name: policy-aap
   categories:
