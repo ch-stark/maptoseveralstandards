@@ -16,7 +16,7 @@ policyDefaults:
   standards:
     - generic
   placement:
-      placementRulePath: "../placement-example.yaml"    
+      placementRulePath: ../placement-example.yaml  
 policies:
 - name: policy-aap
   categories:
