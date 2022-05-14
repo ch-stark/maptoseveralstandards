@@ -12,7 +12,7 @@ policyDefaults:
   namespace: policies
   # Use an existing placement rule 
   placement:
-    placementPath: ../placement-example.yaml
+    placementrulePath: ../placementrule-default.yaml
   remediationAction: inform
   severity: medium
   standards:
