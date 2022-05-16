@@ -80,5 +80,4 @@ policies:
     - setup
   disabled: false
   manifests:
-    - path: ../input/hub_backup_restore/restore-acm-passive-sync-skip.yaml     
-  complianceType: "mustonlyhave"
+    - path: ../input/hub_backup_restore/restore-acm-passive-sync-skip.yaml
