@@ -36,6 +36,7 @@ policies:
   manifests:
     - path: ../input/hub_backup_restore/dataprotectionresource.yaml  
 - name: policy-configure-backup-restore
+  complianceType: "mustonlyhave"
   categories:
     - setup
   controls: 
@@ -44,6 +45,7 @@ policies:
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore.yaml
 - name: policy-configure-backup-restore-passive
+  complianceType: "mustonlyhave"
   categories:
     - setup
   controls: 
@@ -52,6 +54,7 @@ policies:
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore_passive.yaml
 - name: policy-configure-backup-restore-passive-sync
+  complianceType: "mustonlyhave"
   categories:
     - setup
   controls: 
@@ -60,6 +63,7 @@ policies:
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore_passive_sync.yaml
 - name: policy-configure-backup-restore-passive-activate
+  complianceType: "mustonlyhave"
   categories:
     - setup
   controls: 
