@@ -35,5 +35,5 @@ spec:
   restoreSyncInterval: 10m # check for new backups every 10 minutes
   cleanupBeforeRestore: CleanupRestored 
   veleroManagedClustersBackupName: skip # syncRestoreWithNewBackups is ignored if managed clusters are restored
-  veleroCredentialsBackupName: skip
+  veleroCredentialsBackupName: latest
   veleroResourcesBackupName: skip
