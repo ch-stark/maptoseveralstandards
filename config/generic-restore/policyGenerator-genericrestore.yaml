@@ -71,7 +71,6 @@ policies:
   disabled: true
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore_passive_activate.yaml     
-  complianceType: "mustonlyhave"
 - name: policy-configure-backup-restore-passive-activate-skip-all
   complianceType: "mustonlyhave"
   categories:
