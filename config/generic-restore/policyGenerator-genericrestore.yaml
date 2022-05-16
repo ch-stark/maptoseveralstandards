@@ -69,7 +69,7 @@ policies:
   controls: 
     - setup
   disabled: true
- - name: policy-configure-backup-restore-passive-activate
+ - name: policy-configure-backup-restore-passive-activate-skip-all
   complianceType: "mustonlyhave"
   categories:
     - setup
