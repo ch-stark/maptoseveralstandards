@@ -68,7 +68,7 @@ policies:
     - setup
   controls: 
     - setup
-  disabled: true
+  disabled: false
   manifests:
     - path: ../input/hub_backup_restore/cluster_v1beta1_restore_passive_activate.yaml     
 - name: policy-backup-restore-passive-activate-skip-all
@@ -77,6 +77,6 @@ policies:
     - setup
   controls: 
     - setup
-  disabled: false
+  disabled: true
   manifests:
     - path: ../input/hub_backup_restore/restore-acm-passive-sync-skip.yaml
