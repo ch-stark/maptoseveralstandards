@@ -10,7 +10,7 @@ spec:
       type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - key: local-cluster
+      - key: ocal-cluster
         operator: In
         values:
           - 'true'
