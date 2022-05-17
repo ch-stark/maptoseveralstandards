@@ -11,6 +11,6 @@ spec:
   clusterSelector:
     matchExpressions:
       - key: local-cluster
-        operator: In
+        operator: NotIn
         values:
           - 'true'
