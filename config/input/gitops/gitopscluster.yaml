@@ -7,9 +7,9 @@ metadata:
 spec:
   argoServer:
     cluster: local-cluster
-    argoNamespace: policies2
+    argoNamespace: policies
   placementRef:
     kind: Placement
     apiVersion: cluster.open-cluster-management.io/v1beta1
     name: placement-example
-    namespace: policies2
+    namespace: policies
