@@ -16,10 +16,10 @@ spec:
       clusterRoles:
       - cluster-admin
     validate:
-      message: "Modifying or deleting the external customer resource {{request.oldObject.kind}}/{{request.oldObject.metadata.name}} is not allowed. Please seek a cluster-admin."
+      message: "Modifying or deleting the external customer resource {{ `{{request.oldObject.kind}}` }}/{{ `{{request.oldObject.metadata.name}}` }} is not allowed. Please seek a cluster-admin."
       deny:
         conditions:
-          - key: "{{request.operation}}"
+          - key: "{{ `{{request.operation}}` }}"
             operator: In
             value: 
             - DELETE

@@ -29,6 +29,6 @@ spec:
       deny: 
         conditions:
           all:
-          - key: "{{ keys(request.object.spec.strategy) | contains(@, 'jenkinsPipelineStrategy') }}"
+          - key: "{{ `{{ keys(request.object.spec.strategy) | contains(@, 'jenkinsPipelineStrategy') }}` }}"
             operator: Equals
             value: true
