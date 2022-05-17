@@ -67,3 +67,11 @@ policies:
   disabled: false
   manifests:
     - path: ../input/kyverno/validate/openshift/check-routes.yaml
+- name: policy-kyverno-team
+  categories:
+    - setup
+  controls: 
+    - setup
+  disabled: false
+  manifests:
+    - path: ../input/kyverno/team 
