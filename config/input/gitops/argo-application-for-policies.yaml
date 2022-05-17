@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ArgoCD
 metadata:
   name: argopolicies
-  namespace: policies2
+  namespace: policies
 spec:
   applicationSet:
     resources:
@@ -118,7 +118,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: policiesapp
-  namespace: policies2
+  namespace: policies
 spec:
   project: policiesproject
   source:
@@ -134,7 +134,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: policiesproject
-  namespace: policies2
+  namespace: policies
   # Finalizer that ensures that project is not deleted until it is not referenced by any application
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -163,7 +163,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
-  namespace: policies2
+  namespace: policies
   name: default
 spec:
   clusterSet: default
