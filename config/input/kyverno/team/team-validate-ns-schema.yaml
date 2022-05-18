@@ -38,4 +38,4 @@ spec:
             any:
             - key: "{{ `{{request.object.metadata.name}}` }}"
               operator: AnyNotIn
-              value: "{{ `{{request.userInfo.groups[?contains(@,':') == `false`][].join('-', [@, '*']) }}` }}"
+              value: "{{ `{{request.userInfo.groups[?contains(@,':') == `false`][].join('-', [@, '*'])}}` }}"
