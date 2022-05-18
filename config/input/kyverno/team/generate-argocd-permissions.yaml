@@ -36,7 +36,7 @@ spec:
           name: "team1"
     generate:
       kind: ClusterRoleBinding
-      name: "{{ '{{request.object.metadata.name}}' }}-team1-argocdaccess"
+      name: "{{ `{{request.object.metadata.name}}` }}-team1-argocdaccess"
       synchronize: true
       data:
         subjects:
