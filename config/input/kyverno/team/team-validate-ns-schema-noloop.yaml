@@ -1,7 +1,7 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: team-validate-ns-schema
+  name: team-validate-ns-schema-look
   annotations:
     policies.kyverno.io/title: Validate Team Namespace Schema
     policies.kyverno.io/category: Other
