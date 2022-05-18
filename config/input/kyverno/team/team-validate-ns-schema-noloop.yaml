@@ -32,7 +32,7 @@ spec:
           name: openshift-gitops-argocd-server
           namespace: openshift-gitops
     validate:
-      message: The only names approved for your namespaces are the ones starting by {{request.userInfo.groups[?contains(@,':') == `false`]}}-*
+      message: The only names approved for your namespaces are the ones starting by {{ `{{request.userInfo.groups[?contains(@,':') == `false`]}}' }}-*
       deny:
         conditions:
           any:
