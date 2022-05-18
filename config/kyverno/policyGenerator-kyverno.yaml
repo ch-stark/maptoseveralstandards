@@ -99,7 +99,7 @@ policies:
   disabled: false
   manifests:
     - path: ../input/kyverno/team/team-mutate-resource-labels.yaml
-- name: policy-team-mutate-resource-labels
+- name: policy-team-validate-ns-schema-noloop
   categories:
     - setup
   controls: 
