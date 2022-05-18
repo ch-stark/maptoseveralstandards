@@ -24,6 +24,7 @@ metadata:
       When a user from Team1 creates a NS a ClusterRoleBinding gets created so
       it can access ArgoCD.
 spec:
+  background: false
   rules:
   - name: generate-clusterrolebinding
     match:
