@@ -29,7 +29,7 @@ spec:
         - kind: Group
           name: "team1"
     validate:
-      message: The only names approved for your namespaces are the ones starting by {{request.userInfo.groups[?contains(@,':') == `false`]}}-*
+      message: The only names approved for your namespaces are the ones starting by {{ '{{request.userInfo.groups[?contains(@,':') == `false`]}}' }}-*
       foreach:
       - list: "request.userInfo.groups[?contains(@,':') == `false`][].{name:@}"
         elementScope: true
