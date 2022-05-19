@@ -27,7 +27,7 @@ spec:
             - Project
         subjects:
         - kind: Group
-          name: "team1"
+          name: "redsre1"
     validate:
       message: The only names approved for your namespaces are the ones starting by {{ `{{request.userInfo.groups[?contains(@,':') == `false`]}}` }}-*
       foreach:
