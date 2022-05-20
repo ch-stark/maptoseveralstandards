@@ -2,7 +2,7 @@ apiVersion: kyverno.io/v1
 kind: Policy
 metadata:
   name: approve-installplan
-  namespace: <changeme>
+  namespace: policies
   annotations:
     policies.kyverno.io/title: Approves install plans created in the namespace where this policy gets created
     policies.kyverno.io/category: Other

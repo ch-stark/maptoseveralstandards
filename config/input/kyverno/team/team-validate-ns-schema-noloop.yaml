@@ -1,7 +1,7 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: team-validate-ns-schema
+  name: team-validate-ns-schema-look
   annotations:
     policies.kyverno.io/title: Validate Team Namespace Schema
     policies.kyverno.io/category: Other
@@ -32,10 +32,10 @@ spec:
           name: openshift-gitops-argocd-server
           namespace: openshift-gitops
     validate:
-      message: The only names approved for your namespaces are the ones starting by {{request.userInfo.groups[?contains(@,':') == `false`]}}-*
+      message: The only names approved for your namespaces are the ones starting by {{ '{{request.userInfo.groups[?contains(@,':') == `false`]}}' }}-*
       deny:
         conditions:
           any:
-          - key: "{{request.object.metadata.name}}"
+          - key: "{{ '{{request.object.metadata.name}}' }}"
             operator: AnyNotIn
-            value: "{{ request.userInfo.groups[?contains(@,':') == `false`][].join('-', [@, '*']) }}"
+            value: "{{ '{{request.userInfo.groups[?contains(@,':') == `false`][].join('-', [@, '*'])}}' }}"

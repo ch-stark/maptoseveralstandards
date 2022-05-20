@@ -28,5 +28,5 @@ spec:
       patchStrategicMerge:
         metadata:
           labels:
-            "owner.example.com/{{request.userInfo.groups[?contains(@,':') == `false`] | [0] || ''}}": ""
-            "team.example.com/{{request.userInfo.groups[?contains(@,':') == `false`] | [0] || ''}}": ""
+            "owner.example.com/{{ '{{request.userInfo.groups[?contains(@,':') == `false`] | [0] || '' }}' }}": ""
+            "team.example.com/{{ '{{request.userInfo.groups[?contains(@,':') == `false`] | [0] || '' }}' }}": ""

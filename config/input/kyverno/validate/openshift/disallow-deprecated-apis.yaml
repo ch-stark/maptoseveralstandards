@@ -31,5 +31,5 @@ spec:
           - authorization.openshift.io/v1/RoleBinding
     validate:
       message: >-
-        {{ request.object.apiVersion }}/{{ request.object.kind }} is deprecated.
+        {{ `{{ request.object.apiVersion }}` }}/{{ `{{ request.object.kind }}` }} is deprecated.
       deny: {}

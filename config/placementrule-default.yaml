@@ -6,11 +6,12 @@ metadata:
   namespace: policies
 spec:
   clusterConditions:
-    - status: 'True'
-      type: ManagedClusterConditionAvailable
+    - type: ManagedClusterConditionAvailable
+      status: "True"
   clusterSelector:
     matchExpressions:
-      - key: local-cluster
-        operator: In
-        values:
-          - 'true'
+    - key: environment
+      operator: NotIn
+      values:
+      - ignore
+

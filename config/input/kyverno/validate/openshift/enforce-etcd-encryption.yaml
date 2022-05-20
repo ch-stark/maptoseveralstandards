@@ -28,6 +28,6 @@ spec:
       deny: 
         conditions:
           all:
-          - key: "{{ keys(request.object.spec) | contains(@, 'encryption') }}"
+          - key: "{{ `{{ keys(request.object.spec) | contains(@, 'encryption') }}` }}"
             operator: NotEquals
             value: true

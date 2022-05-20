@@ -11,7 +11,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSet
 metadata:
-  name: teamred
+  name: redteam
 spec:
   clusterSelector:
     selectorType: LegacyClusterSetLabel
@@ -21,7 +21,7 @@ spec:
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSet
 metadata:
-  name: teamblue
+  name: blueteam
 spec:
   clusterSelector:
     selectorType: LegacyClusterSetLabel
@@ -43,7 +43,7 @@ apiVersion: cluster.open-cluster-management.io/v1
 kind: ManagedCluster
 metadata:
   labels:
-    cluster.open-cluster-management.io/clusterset: teamred
+    cluster.open-cluster-management.io/clusterset: redteam
   name: local-cluster
 
 
@@ -53,7 +53,7 @@ apiVersion: cluster.open-cluster-management.io/v1
 kind: ManagedCluster
 metadata:
   labels:
-    cluster.open-cluster-management.io/clusterset: teamblue
+    cluster.open-cluster-management.io/clusterset: blueteam
   name: local-cluster
 
 
