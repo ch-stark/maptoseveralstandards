@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: mobile-application-set
+  name: blue-mobile-application-set
   namespace: blueteam
 spec:
   generators:
@@ -21,7 +21,7 @@ spec:
         targetRevision: main
         path: mobileApplication
       destination:
-        namespace: mobileapp
+        namespace: bluemobileapp
         server: "{{server}}"
       syncPolicy:
         syncOptions:

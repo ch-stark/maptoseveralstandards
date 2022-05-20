@@ -2,14 +2,14 @@
 apiVersion: apps.open-cluster-management.io/v1beta1
 kind: GitOpsCluster
 metadata:
-  name: redteam
-  namespace: redteam
+  name: policies-appset
+  namespace: policies-appset
 spec:
   argoServer:
     cluster: local-cluster
-    argoNamespace: redteam
+    argoNamespace: policies
   placementRef:
     kind: Placement
     apiVersion: cluster.open-cluster-management.io/v1beta1
-    name: redteam
-    namespace: redteam
+    name: application-set-policies-placement
+    namespace: policies-appset

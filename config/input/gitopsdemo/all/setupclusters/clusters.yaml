@@ -1,0 +1,73 @@
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: ManagedClusterSet
+metadata:
+  name: all-openshift-clusters
+spec:
+  clusterSelector:
+    selectorType: LegacyClusterSetLabel
+
+---
+
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: ManagedClusterSet
+metadata:
+  name: teamred
+spec:
+  clusterSelector:
+    selectorType: LegacyClusterSetLabel
+
+---
+
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: ManagedClusterSet
+metadata:
+  name: teamblue
+spec:
+  clusterSelector:
+    selectorType: LegacyClusterSetLabel
+
+
+---
+
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  labels:
+    cluster.open-cluster-management.io/clusterset: all-openshift-clusters
+  name: local-cluster
+
+
+---
+
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  labels:
+    cluster.open-cluster-management.io/clusterset: teamred
+  name: local-cluster
+
+
+---
+
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  labels:
+    cluster.open-cluster-management.io/clusterset: teamblue
+  name: local-cluster
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: mobile-application-set
+  name: red-mobile-application-set
   namespace: redteam
 spec:
   generators:
@@ -19,9 +19,9 @@ spec:
       source:
         repoURL: https://github.com/rokej/RedApplications.git
         targetRevision: main
-        path: mobileApplication
+        path: pacman
       destination:
-        namespace: mobileapp
+        namespace: redmobileapp
         server: "{{server}}"
       syncPolicy:
         syncOptions:

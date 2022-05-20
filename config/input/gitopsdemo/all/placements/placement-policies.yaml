@@ -1,0 +1,11 @@
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
+metadata:
+  name: policies-placement
+  namespace: policies-appset
+spec:
+  predicates:
+  - requiredClusterSelector:
+      labelSelector:
+        matchExpressions:
+          - {key: cluster-name, operator: In, values: ["local"]}

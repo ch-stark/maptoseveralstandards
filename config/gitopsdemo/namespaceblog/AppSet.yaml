@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+name: namespace-config
+namespace: openshift-gitops
+spec:
+generators:
+- list:
+    elements:
+    - filepath: teams/team-a.yaml
+      name: team-a
+    - filepath: teams/team-b.yaml
+      name: team-b
+    - filepath: teams/team-c.yaml
+      name: team-c
+- clusterDecisionResource:
+      configMapRef: acm-placement
+      labelSelector:
+        matchLabels:
+          cluster.open-cluster-management.io/placement: red-placement
+      requeueAfterSeconds: 180
+template:
+  metadata:
+    name: '{{name}}-namespace-config'
+  spec:
+    project: default
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+      syncOptions:
+        - CreateNamespace=true
+    source:
+      repoURL: 'https://github.com/saumeya/blog-example-repo'
+      targetRevision: HEAD
+      path: helm-namespace-config
+      helm:
+        valueFiles:
+        - '{{filepath}}'
+    destination:
+      server: 'https://kubernetes.default.svc'
+      namespace: openshift-gitops
