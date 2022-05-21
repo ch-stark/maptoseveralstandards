@@ -7,39 +7,13 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: Example Project
-  # Allow manifests to deploy from any Git repos
   sourceRepos:
   - '*'
-  # Only permit applications to deploy to the guestbook namespace in the same cluster
   destinations:
-  - namespace: guestbook
-    server: https://kubernetes.default.svc
-  # Deny all cluster-scoped resources from being created, except for Namespace
+  - namespace: '*'
+    server: '*'
   clusterResourceWhitelist:
-  - group: ''
-    kind: Namespace
-  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
-  namespaceResourceBlacklist:
-  - group: ''
-    kind: ResourceQuota
-  - group: ''
-    kind: LimitRange
-  - group: ''
-    kind: NetworkPolicy
-  # Deny all namespaced-scoped resources from being created, except for Deployment and StatefulSet
-  namespaceResourceWhitelist:
-  - group: 'apps'
-    kind: Deployment
-  - group: 'apps'
-    kind: StatefulSet
-  roles:
-  # A role which provides read-only access to all applications in the project
-  - name: read-only
-    description: Read-only privileges to my-project
-    policies:
-    - p, proj:my-project:read-only, applications, get, my-project/*, allow
-    groups:
-    - my-oidc-group
-  # A role which provides sync privileges to only the guestbook-dev application, e.g. to provide
+  - group: '*'
+    kind: '*'
+
 
