@@ -3,6 +3,7 @@ kind: Namespace
 metadata:
   labels:
     kubernetes.io/metadata.name: blueteam
+    argocd.argoproj.io/managed-by: openshift-gitops
   name: blueteam
 apiVersion: v1
 ---
@@ -11,6 +12,23 @@ kind: Namespace
 metadata:
   labels:
     kubernetes.io/metadata.name: redteam
+    argocd.argoproj.io/managed-by: openshift-gitops
   name: redteam
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: policies
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: policies
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: policies-appset
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: policies-appset
 
 
