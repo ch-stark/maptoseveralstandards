@@ -29,12 +29,11 @@ spec:
 
 ---
 
----
 apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: kyverno-policies
-  name: redteamkyverno
+  name: redteam-kyverno-policies
 spec:
   clusterSet: redteam
 
@@ -44,9 +43,42 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: kyverno-policies
-  name: blueteamkyverno
+  name: blueteam-kyverno-policies
 spec:
   clusterSet: blueteam
 
 ---
+
+---
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: ManagedClusterSetBinding
+metadata:
+  namespace: kyverno
+  name: redteam-kyverno
+spec:
+  clusterSet: redteam
+
+---
+
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: ManagedClusterSetBinding
+metadata:
+  namespace: kyverno
+  name: blueteam-kyverno-install
+spec:
+  clusterSet: blueteam
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
