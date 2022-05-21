@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: blue-mobile-application-set
-  namespace: blueteam
+  name: policies-application-set
+  namespace: policies-appset
 spec:
   generators:
     - clusterDecisionResource:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: blue-placement
+            cluster.open-cluster-management.io/placement: policies-placement
         requeueAfterSeconds: 180
   template:
     metadata:
       name: mobileapp-{{name}}
     spec:
-      project: default
+      project: policies-project
       source:
         repoURL: https://github.com/rokej/BlueApplications.git
         targetRevision: main

@@ -1,27 +1,27 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: blue-mobile-application-set
-  namespace: blueteam
+  name: red-mobile-application-set
+  namespace: redteam
 spec:
   generators:
     - clusterDecisionResource:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: blue-placement
+            cluster.open-cluster-management.io/placement: red-placement
         requeueAfterSeconds: 180
   template:
     metadata:
       name: mobileapp-{{name}}
     spec:
-      project: blueteam-project
+      project: redteam-project
       source:
         repoURL: https://github.com/rokej/BlueApplications.git
         targetRevision: main
         path: mobileApplication
       destination:
-        namespace: bluemobileapp
+        namespace: redmobileapp
         server: "{{server}}"
       syncPolicy:
         syncOptions:
