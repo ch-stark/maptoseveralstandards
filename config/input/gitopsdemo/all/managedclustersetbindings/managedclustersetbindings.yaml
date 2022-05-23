@@ -23,9 +23,9 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: policies-appset
-  name: default
+  name: all-openshift-clusters
 spec:
-  clusterSet: default
+  clusterSet: all-openshift-clusters
 
 ---
 
