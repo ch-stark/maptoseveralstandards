@@ -13,7 +13,7 @@ spec:
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: mobileapp-{{name}}
+      name: policies-appset-{{name}}
     spec:
       project: policies-project
       source:
