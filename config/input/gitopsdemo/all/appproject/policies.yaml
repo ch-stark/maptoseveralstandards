@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: policies-appset-placement
+  name: policies-project
   namespace: policies-appset
   # Finalizer that ensures that project is not deleted until it is not referenced by any application
   finalizers:
