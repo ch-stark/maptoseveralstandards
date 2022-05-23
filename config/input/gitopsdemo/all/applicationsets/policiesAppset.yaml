@@ -18,8 +18,8 @@ spec:
       project: policies-project
       source:
         repoURL: https://github.com/ch-stark/policies-demo.git
-        targetRevision: main
-        path: mobileApplication
+        targetRevision: master
+        path: policies
       destination:
         namespace: policies
         server: "{{server}}"
