@@ -30,5 +30,29 @@ metadata:
     kubernetes.io/metadata.name: policies-appset
     argocd.argoproj.io/managed-by: openshift-gitops
   name: policies-appset
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: policies-policies
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: kyverno-appset
+---  
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: kyverno
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: kyverno
+---  
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: kyverno-policies
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: kyverno-policies
 
 

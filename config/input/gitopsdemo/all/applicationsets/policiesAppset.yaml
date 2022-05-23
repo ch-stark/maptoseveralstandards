@@ -17,11 +17,11 @@ spec:
     spec:
       project: policies-project
       source:
-        repoURL: https://github.com/rokej/BlueApplications.git
+        repoURL: https://github.com/ch-stark/policies-demo.git
         targetRevision: main
         path: mobileApplication
       destination:
-        namespace: bluemobileapp
+        namespace: policies
         server: "{{server}}"
       syncPolicy:
         syncOptions:

@@ -23,7 +23,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: policies-appset
-  name: policies-appset
+  name: default
 spec:
   clusterSet: default
 
@@ -33,7 +33,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: kyverno-policies
-  name: redteam-kyverno-policies
+  name: redteam
 spec:
   clusterSet: redteam
 
@@ -43,7 +43,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: kyverno-policies
-  name: blueteam-kyverno-policies
+  name: blueteam
 spec:
   clusterSet: blueteam
 
@@ -54,7 +54,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: kyverno
-  name: redteam-kyverno
+  name: redteam
 spec:
   clusterSet: redteam
 
@@ -64,7 +64,7 @@ apiVersion: cluster.open-cluster-management.io/v1beta1
 kind: ManagedClusterSetBinding
 metadata:
   namespace: kyverno
-  name: blueteam-kyverno-install
+  name: blueteam
 spec:
   clusterSet: blueteam
 
