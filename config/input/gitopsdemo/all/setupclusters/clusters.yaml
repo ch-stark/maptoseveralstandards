@@ -44,7 +44,7 @@ kind: ManagedCluster
 metadata:
   labels:
     cluster.open-cluster-management.io/clusterset: redteam
-  name: local-cluster
+  name: dev-cluster1redteam
 
 
 ---
@@ -54,7 +54,7 @@ kind: ManagedCluster
 metadata:
   labels:
     cluster.open-cluster-management.io/clusterset: blueteam
-  name: local-cluster
+  name: dev-cluster2redteam
 
 
 
