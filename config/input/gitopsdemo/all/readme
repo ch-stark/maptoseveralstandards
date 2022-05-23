@@ -1,0 +1,5 @@
+* in RHACM have two ManagedClusters and label them and add them to a ClusterSet
+* Create all resources in ACM to setup Multitenancy
+* Install Gitops-Operator and configure namespaces for ClusterAdmin
+* Configure AppProjects
+* Configurre and create the ApplicationSets for admin and team tasks
