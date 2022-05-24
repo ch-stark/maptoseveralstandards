@@ -17,9 +17,9 @@ spec:
     spec:
       project: kyverno-policies
       source:
-        repoURL: https://github.com/rokej/BlueApplications.git
-        targetRevision: main
-        path: mobileApplication
+        repoURL: https://kyverno.github.io/kyverno
+        chart: kyverno-policies
+        targetRevision: '*'
       destination:
         namespace: kyverno
         server: "{{server}}"
@@ -28,5 +28,3 @@ spec:
           - CreateNamespace=true
         automated:
           selfHeal: true
-
-
