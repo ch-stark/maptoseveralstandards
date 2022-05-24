@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: config/input/gitopsdemo/all/setup-clusters
+    path: config/input/gitopsdemo/all/setupclusters
     repoURL: https://github.com/ch-stark/maptoseveralstandards.git
     targetRevision: HEAD
   syncPolicy:
