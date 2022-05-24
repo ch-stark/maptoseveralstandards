@@ -1,0 +1,95 @@
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:bluesre1
+kind: User
+metadata:
+  name: bluesre1
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:bluesre2
+kind: User
+metadata:
+  name: bluesre2
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:redsre1
+kind: User
+metadata:
+  name: redsre1
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:redsre2
+kind: User
+metadata:
+  name: redsre2
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:redviewer1
+kind: User
+metadata:
+  name: redviewer1
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:redviewer2
+kind: User
+metadata:
+  name: redviewer2
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:blueviewer1
+kind: User
+metadata:
+  name: blueviewer1
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:blueviewer2
+kind: User
+metadata:
+  name: blueviewer2
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:acmsre1
+kind: User
+metadata:
+  name: acmsre1
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:acmsre2
+kind: User
+metadata:
+  name: acmsre2
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:acmviewer1
+kind: User
+metadata:
+  name: acmviewer1
+---
+apiVersion: user.openshift.io/v1
+groups: null
+identities:
+- my_htpasswd_provider:acmviewer2
+kind: User
+metadata:
+  name: acmviewer2
