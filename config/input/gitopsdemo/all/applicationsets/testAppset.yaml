@@ -9,7 +9,7 @@ spec:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: all-openshift-clusters
+            cluster.open-cluster-management.io/placement: test
         requeueAfterSeconds: 180
   template:
     metadata:
