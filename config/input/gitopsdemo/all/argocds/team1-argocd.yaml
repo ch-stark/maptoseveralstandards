@@ -84,6 +84,7 @@ spec:
   resourceExclusions: |
     - apiGroups:
       - tekton.dev
+      - policy.open-cluster-management.io/v1
       clusters:
       - '*'
       kinds:
