@@ -19,6 +19,11 @@ kind: Namespace
 metadata:
   name: policies-appset
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-gitops  
+---
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
@@ -47,7 +52,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: fulldemo
-  namespace: openshift-gitop
+  namespace: openshift-gitops
 spec:
   destination:
     namespace: fulldemo
