@@ -114,12 +114,3 @@ spec:
   tls:
     ca: {}
 
----
-
-apiVersion: cluster.open-cluster-management.io/v1beta1
-kind: ManagedClusterSetBinding
-metadata:
-  namespace: blueteam
-  name: blueteam
-spec:
-  clusterSet: blueteam

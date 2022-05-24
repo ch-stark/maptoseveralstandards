@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ArgoCD
 metadata:
-  name: redteam
-  namespace: redteam
+  name: test
+  namespace: test
 spec:
   applicationSet:
     resources:
@@ -84,11 +84,14 @@ spec:
   resourceExclusions: |
     - apiGroups:
       - tekton.dev
+      - policy.open-cluster-management.io/v1
       clusters:
       - '*'
       kinds:
       - TaskRun
       - PipelineRun
+      - PlacementRule
+      - PlacementBinding
   server:
     autoscale:
       enabled: false
