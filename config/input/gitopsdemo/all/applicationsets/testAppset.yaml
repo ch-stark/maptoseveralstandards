@@ -13,9 +13,9 @@ spec:
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: mobileapp-{{name}}
+      name: test-{{name}}
     spec:
-      project: blueteam-project
+      project: default
       source:
         repoURL: https://github.com/rokej/BlueApplications.git
         targetRevision: main
