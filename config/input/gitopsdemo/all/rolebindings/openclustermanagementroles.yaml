@@ -1,0 +1,53 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: redteam
+  name: permissions
+rules:
+- apiGroups: ["apps.open-cluster-management.io", "cluster.open-cluster-management.io"] # "" indicates the core API group
+  resources: ["placementrules", "placementdecisions"]
+  verbs: ["list"]
+
+---
+
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: permission-rolebinding
+  namespace: redteam
+subjects:
+- kind: ServiceAccount
+  name: redteam-applicationset-controller
+  namespace: redteam
+roleRef:
+  kind: Role
+  name: permissions
+  apiGroup: rbac.authorization.k8s.io
+
+---
+
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: blueteam
+  name: permissions
+rules:
+- apiGroups: ["apps.open-cluster-management.io", "cluster.open-cluster-management.io"] # "" indicates the core API group
+  resources: ["placementrules", "placementdecisions"]
+  verbs: ["list"]
+
+---
+
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: permission-rolebinding
+  namespace: blueteam
+subjects:
+- kind: ServiceAccount
+  name: blueteam-applicationset-controller
+  namespace: blueteam
+roleRef:
+  kind: Role
+  name: permissions
+  apiGroup: rbac.authorization.k8s.io
