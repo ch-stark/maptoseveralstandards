@@ -8,8 +8,10 @@ spec:
     - clusterDecisionResource:
         configMapRef: acm-placement
         labelSelector:
-          matchLabels:
-            cluster.open-cluster-management.io/placement: red-placement
+          matchExpressions:
+            - key: local
+              operator: NotIn
+              value: true
         requeueAfterSeconds: 180
   template:
     metadata:
