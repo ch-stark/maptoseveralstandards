@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: kyverno
-  namespace: kyverno
+  name: kyverno-policies
+  namespace: kyverno-policies
 spec:
   generators:
     - clusterDecisionResource:
