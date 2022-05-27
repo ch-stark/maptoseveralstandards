@@ -7,6 +7,13 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: test
+---
+
+
+apiVersion: v1
+kind: Namespace
+metadata:
   name: kyverno
 ---
 apiVersion: v1
