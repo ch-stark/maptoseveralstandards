@@ -14,7 +14,7 @@ spec:
     repoURL: https://github.com/ch-stark/maptoseveralstandards.git
     targetRevision: HEAD
   ignoreDifferences:
-  - kind: "Namespaces"  
+  - kind: "Namespace"  
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
