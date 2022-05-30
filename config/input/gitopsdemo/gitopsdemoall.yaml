@@ -62,15 +62,13 @@ spec:
   config:
     env:
       - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
-<<<<<<< HEAD
         value: 'openshift-gitops, test, kyverno, kyverno-policies, policies, policiesappset'
-=======
-        value: 'openshift-gitops, kyverno, kyverno-policies, policies, policiesappset'
+
 
 ---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  creationTimestamp: null
   name: cluster-admin-0
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -80,7 +78,6 @@ subjects:
 - kind: ServiceAccount
   name: openshift-gitops-argocd-application-controller
   namespace: openshift-gitops
->>>>>>> 080f61943d1899c468836e8bc551678546ac3094
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application

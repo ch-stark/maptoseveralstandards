@@ -19,9 +19,9 @@ spec:
     spec:
       project: kyverno-policies
       source:
-        repoURL: https://kyverno.github.io/kyverno
-        chart: kyverno-policies
-        targetRevision: '*'
+        path: config/input/gitopsdemo/all/kyverno
+        repoURL: https://github.com/ch-stark/maptoseveralstandards.git
+        targetRevision: HEAD
       destination:
         namespace: kyverno
         server: "{{server}}"
@@ -30,8 +30,8 @@ spec:
         kind: ClusterPolicy
         jqPathExpressions:
           - .spec.rules[] | select(.name|test("autogen-."))         
-      syncPolicy:
-        syncOptions:
-          - CreateNamespace=true
-        automated:
-          selfHeal: true
+    syncPolicy:
+      syncOptions:
+        - CreateNamespace=true
+      automated:
+        selfHeal: true
