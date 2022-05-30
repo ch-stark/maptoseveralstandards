@@ -12,7 +12,7 @@ spec:
             - key: local-cluster
               operator: In
               values: 
-              - 'true'
+              - true
         requeueAfterSeconds: 180
   template:
     metadata:
