@@ -9,7 +9,7 @@ spec:
         configMapRef: acm-placement
         labelSelector:
           matchExpressions:
-            - key: local
+            - key: local-cluster
               operator: NotIn
               value: true
         requeueAfterSeconds: 180
