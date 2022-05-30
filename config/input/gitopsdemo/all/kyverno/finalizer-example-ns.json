@@ -1,0 +1,204 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/instance\":\"openshiftrbac\",\"argocd.argoproj.io/managed-by\":\"openshift-gitops\",\"kubernetes.io/metadata.name\":\"kyverno\"},\"name\":\"kyverno\"}}\n",
+            "openshift.io/sa.scc.mcs": "s0:c28,c22",
+            "openshift.io/sa.scc.supplemental-groups": "1000800000/10000",
+            "openshift.io/sa.scc.uid-range": "1000800000/10000"
+        },
+        "creationTimestamp": "2022-05-30T08:52:31Z",
+        "deletionTimestamp": "2022-05-30T11:03:29Z",
+        "labels": {
+            "app.kubernetes.io/instance": "openshiftrbac",
+            "argocd.argoproj.io/managed-by": "openshift-gitops",
+            "kubernetes.io/metadata.name": "kyverno",
+            "olm.operatorgroup.uid/36c47784-db95-4b6a-93d7-bf4f153ddfb0": "",
+            "openshift.io/cluster-monitoring": "true"
+        },
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            "f:openshift.io/sa.scc.mcs": {},
+                            "f:openshift.io/sa.scc.supplemental-groups": {},
+                            "f:openshift.io/sa.scc.uid-range": {}
+                        }
+                    }
+                },
+                "manager": "cluster-policy-controller",
+                "operation": "Update",
+                "time": "2022-05-30T08:52:31Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {},
+                        "f:labels": {
+                            ".": {},
+                            "f:kubernetes.io/metadata.name": {}
+                        }
+                    }
+                },
+                "manager": "kubectl-client-side-apply",
+                "operation": "Update",
+                "time": "2022-05-30T09:56:50Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:labels": {
+                            "f:openshift.io/cluster-monitoring": {}
+                        }
+                    }
+                },
+                "manager": "manager",
+                "operation": "Update",
+                "time": "2022-05-30T10:17:28Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:labels": {
+                            "f:olm.operatorgroup.uid/36c47784-db95-4b6a-93d7-bf4f153ddfb0": {}
+                        }
+                    }
+                },
+                "manager": "olm",
+                "operation": "Update",
+                "time": "2022-05-30T10:21:21Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:conditions": {
+                            ".": {},
+                            "k:{\"type\":\"NamespaceContentRemaining\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionContentFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionDiscoveryFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceDeletionGroupVersionParsingFailure\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            },
+                            "k:{\"type\":\"NamespaceFinalizersRemaining\"}": {
+                                ".": {},
+                                "f:lastTransitionTime": {},
+                                "f:message": {},
+                                "f:reason": {},
+                                "f:status": {},
+                                "f:type": {}
+                            }
+                        }
+                    }
+                },
+                "manager": "kube-controller-manager",
+                "operation": "Update",
+                "subresource": "status",
+                "time": "2022-05-30T11:03:39Z"
+            },
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            "f:kubectl.kubernetes.io/last-applied-configuration": {}
+                        },
+                        "f:labels": {
+                            "f:app.kubernetes.io/instance": {},
+                            "f:argocd.argoproj.io/managed-by": {}
+                        }
+                    }
+                },
+                "manager": "argocd-application-controller",
+                "operation": "Update",
+                "time": "2022-05-30T13:08:11Z"
+            }
+        ],
+        "name": "kyverno",
+        "resourceVersion": "710370",
+        "uid": "d4dd3b8b-0830-42a5-b292-7f732365cc98"
+    },
+    "spec": {
+        "finalizers": [
+            
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2022-05-30T11:03:39Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2022-05-30T11:03:39Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2022-05-30T11:03:39Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2022-05-30T11:03:39Z",
+                "message": "Some resources are remaining: appprojects.argoproj.io has 1 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2022-05-30T11:03:39Z",
+                "message": "Some content in the namespace has finalizers remaining: resources-finalizer.argocd.argoproj.io in 1 resource instances",
+                "reason": "SomeFinalizersRemain",
+                "status": "True",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
