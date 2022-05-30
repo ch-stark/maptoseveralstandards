@@ -62,7 +62,7 @@ spec:
   config:
     env:
       - name: ARGOCD_CLUSTER_CONFIG_NAMESPACES
-        value: 'openshift-gitops, kyverno, kyverno-policies, policies, policiesappset'
+        value: 'openshift-gitops, test, kyverno, kyverno-policies, policies, policiesappset'
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
