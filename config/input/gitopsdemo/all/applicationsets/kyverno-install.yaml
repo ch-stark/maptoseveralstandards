@@ -17,11 +17,11 @@ spec:
     metadata:
       name: kyverno-policies-{{name}}
     spec:
-      project: kyverno-policies
+      project: default
       source:
-        path: config/input/gitopsdemo/all/kyverno2
-        repoURL: https://github.com/ch-stark/maptoseveralstandards.git
-        targetRevision: HEAD
+        repoURL: https://kyverno.github.io/kyverno
+        chart: kyverno-policies
+        targetRevision: '*'
       destination:
         namespace: kyverno
         server: "{{server}}"
