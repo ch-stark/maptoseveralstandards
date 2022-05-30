@@ -9,7 +9,16 @@ kind: Namespace
 metadata:
   name: test
 ---
-
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bluetest
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: redteam
+---
 
 apiVersion: v1
 kind: Namespace
