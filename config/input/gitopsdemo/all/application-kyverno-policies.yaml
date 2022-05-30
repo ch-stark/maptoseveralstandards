@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: appproject
+  name: kyverno-policies
   namespace: openshift-gitops
 spec:
   destination:
@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: config/input/gitopsdemo/all/appproject
+    path: config/input/gitopsdemo/all/kyverno/overlay/policies
     repoURL: https://github.com/ch-stark/maptoseveralstandards.git
     targetRevision: HEAD
   syncPolicy:
