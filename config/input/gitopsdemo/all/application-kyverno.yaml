@@ -13,6 +13,8 @@ spec:
     path: config/input/gitopsdemo/all/kyverno
     repoURL: https://github.com/ch-stark/maptoseveralstandards.git
     targetRevision: HEAD
+  ignoreDifferences:
+  - kind: "Namespaces"  
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
