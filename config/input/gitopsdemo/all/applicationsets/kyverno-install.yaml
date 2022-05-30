@@ -10,7 +10,7 @@ spec:
         labelSelector:
           matchExpressions:
             - key: local-cluster
-              operator: NotIn
+              operator: In
               values: 
               - 'true'
         requeueAfterSeconds: 180
