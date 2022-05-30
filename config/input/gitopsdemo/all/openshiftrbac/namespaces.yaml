@@ -11,6 +11,24 @@ apiVersion: v1
 kind: Namespace
 metadata:
   labels:
+    kubernetes.io/metadata.name: test
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: test
+apiVersion: v1
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: kyverno
+    argocd.argoproj.io/managed-by: openshift-gitops
+  name: kyverno
+apiVersion: v1
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
     kubernetes.io/metadata.name: redteam
     argocd.argoproj.io/managed-by: openshift-gitops
   name: redteam
