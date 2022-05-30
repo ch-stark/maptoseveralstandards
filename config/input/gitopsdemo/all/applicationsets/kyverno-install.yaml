@@ -25,11 +25,6 @@ spec:
       destination:
         namespace: kyverno
         server: "{{server}}"
-    ignoreDifferences:
-      - group: kyverno.io
-        kind: ClusterPolicy
-        jqPathExpressions:
-          - .spec.rules[] | select(.name|test("autogen-."))         
     syncPolicy:
       syncOptions:
         - CreateNamespace=true
