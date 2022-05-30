@@ -19,7 +19,7 @@ spec:
     spec:
       project: kyverno-policies
       source:
-        path: config/input/gitopsdemo/all/kyverno
+        path: config/input/gitopsdemo/all/kyverno2
         repoURL: https://github.com/ch-stark/maptoseveralstandards.git
         targetRevision: HEAD
       destination:
